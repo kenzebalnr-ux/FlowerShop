@@ -20,7 +20,7 @@ docker compose logs backend
 docker compose down
 ```
 
-Осы ортада Docker нақты іске қосылғаны туралы дәлел бөлек тексеру нәтижесінде беріледі. Конфигурацияның болуы сәтті контейнерлік іске қосу болып есептелмейді.
+GitHub Actions ішінде Compose конфигурациясы тексеріліп, backend және frontend образдары сәтті құрастырылды: [нақты CI нәтижесі](https://github.com/kenzebalnr-ux/FlowerShop/actions/runs/45587968844). Браузер сценарийлері жергілікті Uvicorn және Streamlit серверлерінде тексерілді. Docker build нәтижесі толық контейнерлік end-to-end тест деп көрсетілмейді.
 
 ## Қорғау сұрақтарына жауап
 
