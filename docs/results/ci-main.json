@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-25",
+  "scope": "Негізгі FlowerShop жобасының толық CI pipeline-і",
+  "runs": [
+    {
+      "run_id": 45587968844,
+      "conclusion": "success",
+      "jobs": [
+        "pytest + Bandit",
+        "Docker Compose config + backend/frontend builds"
+      ],
+      "url": "https://github.com/kenzebalnr-ux/FlowerShop/actions/runs/45587968844"
+    },
+    {
+      "run_id": 45588236133,
+      "commit": "0811a43029ae69759e7c5c532c432f2dc93be169",
+      "conclusion": "success",
+      "url": "https://github.com/kenzebalnr-ux/FlowerShop/actions/runs/45588236133"
+    }
+  ]
+}

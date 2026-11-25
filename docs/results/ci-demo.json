@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-25",
+  "branch": "lab8-ci-quality-demo",
+  "scope": "Бақыланатын multiplication unit-test қате→түзету тәжірибесі; негізгі толық жоба pipeline-ін алмастырмайды",
+  "runs": [
+    {
+      "stage": "intentional_failure",
+      "commit": "9a351de4b3dbf6080b4af771e9268af08a864dc1",
+      "conclusion": "failure",
+      "url": "https://github.com/kenzebalnr-ux/FlowerShop/actions/runs/45586463267"
+    },
+    {
+      "stage": "fixed",
+      "commit": "fddc9f04348df78946f48094cb2f303441e8cb87",
+      "conclusion": "success",
+      "url": "https://github.com/kenzebalnr-ux/FlowerShop/actions/runs/45586997382"
+    }
+  ]
+}

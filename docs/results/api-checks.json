@@ -1,0 +1,143 @@
+{
+  "title": "FlowerShop: requests арқылы HTTP интеграциялық тексеріс",
+  "timestamp_utc": "2026-11-25T09:51:38.248360+00:00",
+  "environment": "Уақытша SQLite және тек 127.0.0.1 мекенжайындағы Uvicorn",
+  "passed": true,
+  "checks": [
+    {
+      "label": "Каталогты алу",
+      "method": "GET",
+      "path": "/api/products",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "body_sample": [
+        {
+          "name": "Нәзік сезім",
+          "description": "Ақ және алқызыл раушаннан жиналған әсем гүлшоғы. Жақын адамыңызға жылы сезім сыйлаңыз.",
+          "old_price": 21900,
+          "image_url": "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=900&q=85",
+          "occasion": "Туған күн",
+          "id": 1,
+          "price": 18900,
+          "category_id": 1,
+          "stock": 30,
+          "badge": "Көп таңдалған",
+          "rating": 5.0
+        },
+        {
+          "name": "Көктем шуағы",
+          "description": "Жаңа жиналған қызғалдақтар. Көктемнің жарқын түстері мен жеңіл көңіл күйі.",
+          "old_price": null,
+          "image_url": "https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=900&q=85",
+          "occasion": "Алғыс айту",
+          "id": 2,
+          "price": 12900,
+          "category_id": 2,
+          "stock": 30,
+          "badge": "Маусым таңдауы",
+          "rating": 5.0
+        }
+      ]
+    },
+    {
+      "label": "Жаңа тауар қосу",
+      "method": "POST",
+      "path": "/api/products",
+      "expected_status": 201,
+      "actual_status": 201,
+      "passed": true,
+      "body_sample": {
+        "name": "API сынақ гүлі",
+        "description": "Оқшауланған HTTP тексерісінің тауары",
+        "old_price": null,
+        "image_url": "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=85",
+        "occasion": "Кез келген күн",
+        "id": 13,
+        "price": 12000,
+        "category_id": 1,
+        "stock": 5,
+        "badge": "",
+        "rating": 5.0
+      }
+    },
+    {
+      "label": "Тауарды толық жаңарту",
+      "method": "PUT",
+      "path": "/api/products/13",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "body_sample": {
+        "name": "API сынақ гүлі",
+        "description": "Оқшауланған HTTP тексерісінің тауары",
+        "old_price": null,
+        "image_url": "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=85",
+        "occasion": "Кез келген күн",
+        "id": 13,
+        "price": 15000,
+        "category_id": 1,
+        "stock": 5,
+        "badge": "",
+        "rating": 5.0
+      }
+    },
+    {
+      "label": "Тауарды физикалық жою",
+      "method": "DELETE",
+      "path": "/api/products/13",
+      "expected_status": 204,
+      "actual_status": 204,
+      "passed": true,
+      "body_sample": null
+    },
+    {
+      "label": "Қате JSON қабылданбайды",
+      "method": "POST",
+      "path": "/api/products",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "body_sample": {
+        "detail": "Енгізілген деректерді тексеріңіз. Міндетті өрістерді дұрыс толтырыңыз.",
+        "fields": [
+          "8"
+        ]
+      }
+    },
+    {
+      "label": "Жойылған тауар табылмайды",
+      "method": "GET",
+      "path": "/api/products/13",
+      "expected_status": 404,
+      "actual_status": 404,
+      "passed": true,
+      "body_sample": {
+        "detail": "Гүлшоғы табылмады."
+      }
+    },
+    {
+      "label": "Авторизациясыз қорғалған ресурс",
+      "method": "GET",
+      "path": "/api/orders",
+      "expected_status": 401,
+      "actual_status": 401,
+      "passed": true,
+      "body_sample": {
+        "detail": "Алдымен жүйеге кіріңіз."
+      }
+    },
+    {
+      "label": "Клиент әкімші әрекетін жасай алмайды",
+      "method": "POST",
+      "path": "/api/products",
+      "expected_status": 403,
+      "actual_status": 403,
+      "passed": true,
+      "body_sample": {
+        "detail": "Бұл әрекет тек әкімшіге қолжетімді."
+      }
+    }
+  ],
+  "error": null
+}

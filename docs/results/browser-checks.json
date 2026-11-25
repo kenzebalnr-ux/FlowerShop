@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-25",
+  "environment": "Нақты desktop браузер, жергілікті FlowerShop сервері",
+  "evidence_type": "Агент орындаған браузер сценарийлерінің жазбасы; скриншот емес",
+  "synthetic_account": "flowershop-qa@example.invalid",
+  "checks": [
+    {
+      "scenario": "Тіркелу",
+      "status": "passed"
+    },
+    {
+      "scenario": "Тауарды таңдаулыға қосу",
+      "product_id": 1,
+      "status": "passed"
+    },
+    {
+      "scenario": "Тауарды себетке қосу",
+      "product_id": 1,
+      "status": "passed"
+    },
+    {
+      "scenario": "GUL10 тапсырыс",
+      "order_number": "FS-683B35F8",
+      "subtotal": 18900,
+      "discount": 1890,
+      "delivery_fee": 1500,
+      "total": 18510,
+      "status": "passed"
+    },
+    {
+      "scenario": "Жеке тапсырыс тарихы",
+      "status": "passed"
+    },
+    {
+      "scenario": "375×812 мобильді көрініс",
+      "body_horizontal_overflow": false,
+      "status": "passed"
+    },
+    {
+      "scenario": "Көктем іздеуі",
+      "result_count": 2,
+      "status": "passed"
+    },
+    {
+      "scenario": "JavaScript қате журналы",
+      "error_count": 0,
+      "status": "passed"
+    },
+    {
+      "scenario": "Streamlit :8501 ішінде Көктем іздеу",
+      "result_count": 2,
+      "status": "passed"
+    },
+    {
+      "scenario": "Streamlit әкімші ретінде кіру",
+      "account_type": "Жасанды тест әкімшісі",
+      "status": "passed"
+    },
+    {
+      "scenario": "Streamlit тауар қосу",
+      "product_id": 13,
+      "product_name": "Сынақ гүлі QA",
+      "status": "passed"
+    },
+    {
+      "scenario": "Streamlit өңдеу қойындысын таңдау және rerun күйі",
+      "product_id": 13,
+      "selected_tab_retained": true,
+      "status": "passed"
+    },
+    {
+      "scenario": "Streamlit PATCH арқылы атауын жаңарту",
+      "product_id": 13,
+      "old_name": "Сынақ гүлі QA",
+      "new_name": "Сынақ гүлі QA жаңартылды",
+      "visible_confirmation": "Тауар жаңартылды.",
+      "status": "passed"
+    }
+  ]
+}

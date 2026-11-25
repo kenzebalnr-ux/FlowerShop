@@ -1,0 +1,24 @@
+.........................................................                [100%]
+============================== warnings summary ===============================
+..\core-deps\fastapi\testclient.py:1
+  C:\Users\user\Documents\Codex\2026-11-25\new-chat\work\core-deps\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.12.14-final-0 _______________
+
+Name                      Stmts   Miss  Cover   Missing
+-------------------------------------------------------
+backend\__init__.py           0      0   100%
+backend\create_admin.py      23     23     0%   2-29
+backend\db.py                30      1    97%   19
+backend\main.py             229     41    82%   77, 81-83, 96, 103, 111, 129, 139, 170, 172, 175-177, 183, 196, 221, 255, 260-281, 285, 296-299
+backend\models.py            75      0   100%
+backend\schemas.py          100      8    92%   24, 55-58, 78, 104, 120
+backend\security.py          47      1    98%   63
+backend\seed.py              43     12    72%   67-74, 78-81
+-------------------------------------------------------
+TOTAL                       547     86    84%
+Coverage XML written to file docs/results/coverage.xml
+57 passed, 1 warning in 27.38s

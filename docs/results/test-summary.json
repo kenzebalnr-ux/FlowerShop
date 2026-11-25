@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-25",
+  "platform": "Windows",
+  "python": "3.12.14",
+  "total": 57,
+  "passed": 57,
+  "failed": 0,
+  "errors": 0,
+  "warnings": 1,
+  "duration_seconds": 27.38,
+  "coverage_percent": 84.28,
+  "covered_lines": 461,
+  "valid_lines": 547,
+  "bandit_findings": 0,
+  "notes": [
+    "Starlette TestClient httpx тәуелділігі туралы ескірген API ескертуі",
+    "Интерактивті create_admin.py CLI автоматты тестпен қамтылмаған",
+    "Бір нақты Bandit B105 suppression: bearer — HTTP авторизация тәсілінің атауы, құпиясөз емес"
+  ],
+  "by_group": {
+    "integration": 9,
+    "security": 18,
+    "unit": 30
+  }
+}
