@@ -38,7 +38,7 @@ with st.sidebar:
     if st.session_state.user:
         st.write(st.session_state.user.get("name", "Пайдаланушы"))
         st.caption("Әкімші" if st.session_state.user.get("role") == "admin" else "Сатып алушы")
-        if st.button("Шығу", use_container_width=True):
+        if st.button("Шығу", width="stretch"):
             api("POST", "/api/auth/logout")
             st.session_state.token = ""
             st.session_state.user = None
@@ -48,7 +48,7 @@ with st.sidebar:
         with st.form("login"):
             email = st.text_input("Электрондық пошта", placeholder="admin@flowershop.kz")
             password = st.text_input("Құпиясөз", type="password")
-            submit = st.form_submit_button("Кіру", use_container_width=True, type="primary")
+            submit = st.form_submit_button("Кіру", width="stretch", type="primary")
         if submit:
             result = api("POST", "/api/auth/login", json={"email": email, "password": password})
             if result:
@@ -88,7 +88,7 @@ metrics[1].metric("Қоймадағы дана", sum(p["stock"] for p in product
 metrics[2].metric("Санаттар", len(categories))
 if products:
     rows = [{"ID": p["id"], "Атауы": p["name"], "Санат": category_names.get(p["category_id"], "—"), "Бағасы, ₸": p["price"], "Қойма": p["stock"], "Белгі": p.get("badge", "")} for p in products]
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
 else:
     st.info("Бұл шарттарға сәйкес гүл табылмады. Іздеу мен сүзгіні өзгертіңіз.")
 
@@ -142,7 +142,7 @@ with orders_tab:
     orders = api("GET", "/api/admin/orders")
     labels = {"new": "Жаңа", "confirmed": "Расталды", "preparing": "Дайындалуда", "delivering": "Жеткізілуде", "completed": "Аяқталды", "cancelled": "Бас тартылды"}
     if orders:
-        st.dataframe(pd.DataFrame([{"Нөмір": o["number"], "Алушы": o["recipient_name"], "Телефон": o["phone"], "Сома, ₸": o["total"], "Күйі": labels.get(o["status"], o["status"]), "Күні": o["delivery_date"]} for o in orders]), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame([{"Нөмір": o["number"], "Алушы": o["recipient_name"], "Телефон": o["phone"], "Сома, ₸": o["total"], "Күйі": labels.get(o["status"], o["status"]), "Күні": o["delivery_date"]} for o in orders]), width="stretch", hide_index=True)
         lookup = {o["id"]: o for o in orders}
         oid = st.selectbox("Тапсырысты таңдау", list(lookup), format_func=lambda x: lookup[x]["number"])
         transitions = {"new": ["confirmed", "cancelled"], "confirmed": ["preparing", "cancelled"], "preparing": ["delivering", "cancelled"], "delivering": ["completed"], "completed": [], "cancelled": []}
@@ -154,3 +154,4 @@ with orders_tab:
                 st.rerun()
     elif orders is not None:
         st.info("Әзірше тапсырыс жоқ.")
+
