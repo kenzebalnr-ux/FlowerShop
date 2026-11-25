@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#652a43">
+  <meta name="description" content="FlowerShop — сезімді гүлмен жеткізіңіз. Гүл шоқтарын таңдаңыз, себетке қосыңыз және онлайн тапсырыс беріңіз.">
+  <title>FlowerShop — Сезімді гүлмен жеткізіңіз</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script defer src="/static/app.js"></script>
+</head>
+<body>
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="i-flower" viewBox="0 0 24 24"><path d="M12 9c-6-8-10 1-5 3-8 3-1 10 3 5 0 9 10 5 7-1 8 0 5-10-1-7 2-8-7-9-7-2"/><circle cx="12" cy="12" r="2.7"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.8a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-9.4a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 5h12v12H2zM14 9h4l4 5v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13"/><path d="M12 8C4 9 4 0 8 3c2 1 4 5 4 5Zm0 0c8 1 8-8 4-5-2 1-4 5-4 5Z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C3 2 1 12 6 17c5 5 15 3 14-14Z"/><path d="M3 22 16 9"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#catalog">Каталогқа өту</a>
+<div class="announcement"><span>Гүл шоқтарына <strong>−10%</strong></span><span class="announcement-divider"></span><span>Промокод: <strong>GUL10</strong></span></div>
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" href="#" aria-label="FlowerShop — басты бет"><svg class="brand-flower"><use href="#i-flower"/></svg><span>Flower<span class="brand-italic">Shop</span><small>ГҮЛМЕН АЙТЫЛҒАН СЕЗІМ</small></span></a>
+    <nav class="desktop-nav" aria-label="Негізгі мәзір"><a href="#catalog" class="nav-active">Гүлдер каталогы</a><a href="#about">Біз туралы</a><a href="#delivery">Жеткізу</a></nav>
+    <div class="header-actions">
+      <button class="icon-button search-jump" aria-label="Гүл іздеу"><svg><use href="#i-search"/></svg></button>
+      <button class="icon-button" id="favorites-button" aria-label="Таңдаулы гүлдер" aria-pressed="false"><svg><use href="#i-heart"/></svg><span class="counter" id="favorite-count" hidden>0</span></button>
+      <button class="icon-button" id="account-button" aria-label="Жеке кабинет"><svg><use href="#i-user"/></svg></button>
+      <button class="icon-button bag-button" id="cart-button" aria-label="Себетті ашу"><svg><use href="#i-bag"/></svg><span class="counter" id="cart-count" hidden>0</span></button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="eyebrow-line"></span>ӘР СӘТКЕ — ЕРЕКШЕ ГҮЛ</span>
+      <h1 id="hero-title">Сезімді <em>гүлмен</em><br>жеткізіңіз.</h1>
+      <p>Кейде ең маңызды сөздер гүлмен айтылады.<br class="desktop-break"> Жақыныңызға қуаныш сыйлайтын гүл шоғын табыңыз.</p>
+      <div class="hero-actions"><a class="button button-primary" href="#catalog">Гүл шоғын таңдау <svg><use href="#i-flower"/></svg></a><span class="hero-note">Шын көңілден.<br>Сіз үшін.</span></div>
+      <div class="hero-bottom"><svg><use href="#i-gift"/></svg><span>Әр тапсырысқа тілегіңіз жазылған ашықхат</span></div>
+    </div>
+    <div class="hero-art">
+      <span class="hero-top-note">сезімнің ең нәзік тілі</span>
+      <div class="hero-image-wrap"><img class="hero-image" src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=1200&q=85" alt="Нәзік қызғылт гүлдерден жасалған гүл шоғы" fetchpriority="high"></div>
+      <div class="hero-stamp"><svg><use href="#i-flower"/></svg><span>Кішкентай сыйлық.<br><strong>Үлкен қуаныш.</strong></span></div>
+      <span class="hero-caption">Сезіміңізге лайық гүлдер</span>
+      <svg class="hero-doodle" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M60 54C-4-30-17 51 45 60C-32 88 31 147 55 76C64 155 130 112 75 65C155 60 114-18 67 47C97-31 22-30 60 54Z" stroke="currentColor" stroke-width="1.5"/></svg>
+    </div>
+  </section>
+  <div class="benefits container" aria-label="Дүкен артықшылықтары">
+    <div><svg><use href="#i-leaf"/></svg><span><strong>Талғаммен таңдалған</strong><small>Әр көңіл күйге сай гүл шоқтары</small></span></div>
+    <div><svg><use href="#i-truck"/></svg><span><strong>Ыңғайлы жеткізу</strong><small>Күн мен уақытты өзіңіз таңдаңыз</small></span></div>
+    <div><svg><use href="#i-gift"/></svg><span><strong>Жеке ашықхат</strong><small>Жылы сөзіңізді гүлге қосамыз</small></span></div>
+    <div><svg><use href="#i-heart"/></svg><span><strong>Сүйіспеншілікпен</strong><small>Әрбір бөлшекке мән береміз</small></span></div>
+  </div>
+  <section class="catalog container section-space" id="catalog" aria-labelledby="catalog-title">
+    <div class="section-heading"><div><span class="eyebrow">ГҮЛДЕР ӘЛЕМІ</span><h2 id="catalog-title">Сіздің ерекше <em>таңдауыңыз</em></h2></div><p>Себеп іздемеңіз.<br>Жай ғана қуаныш сыйлаңыз.</p></div>
+    <div class="catalog-tools">
+      <div class="category-tabs" id="category-tabs" role="group" aria-label="Гүл санаттары"><button class="category-tab active" data-category="">Барлық гүлдер</button></div>
+      <div class="catalog-controls">
+        <label class="search-field"><svg><use href="#i-search"/></svg><input id="search" type="search" placeholder="Өзіңіздің гүліңізді табыңыз…" aria-label="Гүл атауы бойынша іздеу" autocomplete="off"></label>
+        <details class="price-filter" id="price-filter"><summary><svg><use href="#i-filter"/></svg>Баға</summary><div class="price-popover"><p>Баға аралығы, ₸</p><div class="price-inputs"><label>Бастап<input id="min-price" type="number" min="0" step="500" placeholder="0"></label><span>–</span><label>Дейін<input id="max-price" type="number" min="0" step="500" placeholder="100 000"></label></div><button class="button button-primary small" id="apply-price">Қолдану</button><button class="text-button" id="clear-price">Тазалау</button></div></details>
+        <label class="select-wrap"><span class="sr-only">Гүлдерді сұрыптау</span><select id="sort"><option value="popular">Ұсынылған</option><option value="price_asc">Алдымен арзаны</option><option value="price_desc">Алдымен қымбаты</option><option value="new">Жаңадан қосылған</option></select><svg><use href="#i-chevron"/></svg></label>
+      </div>
+    </div>
+    <div class="results-meta"><span id="result-count" role="status">Гүлдер жүктелуде…</span><button class="text-button" id="reset-filters" hidden>Сүзгілерді тазалау</button></div>
+    <div class="product-grid" id="product-grid" aria-live="polite" aria-busy="true"></div>
+  </section>
+  <section class="occasion-section container" id="about">
+    <div class="occasion-photo"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=85" alt="Көктемгі гүлдердің табиғи сұлулығы" loading="lazy"><span class="photo-label">Гүл сыйлауға себеп көп.</span></div>
+    <div class="occasion-copy"><span class="eyebrow">FLOWERSHOP ТУРАЛЫ</span><h2>Жақын болудың<br><em>әдемі жолы.</em></h2><p>Туған күн, көптен күткен кездесу немесе қарапайым «сені ойлап жүрмін». Біз әр сәтке үйлесетін гүлдерді бір жерге жинадық.</p><p>Каталогтан көңіліңізге жаққан гүл шоғын таңдаңыз. Жеткізу күнін белгілеп, ашықхатқа жылы тілегіңізді жазыңыз.</p><a class="button button-outline" href="#catalog">Өз гүл шоғымды табу</a></div>
+  </section>
+  <section class="delivery-section container section-space" id="delivery">
+    <div class="section-heading"><div><span class="eyebrow">БӘРІ ОҢАЙ</span><h2>Гүлден — <em>қуанышқа дейін</em></h2></div><span class="delivery-pill"><svg><use href="#i-truck"/></svg>25 000 ₸ бастап жеткізу тегін</span></div>
+    <div class="delivery-grid"><article><span class="feature-icon"><svg><use href="#i-flower"/></svg></span><h3>Жүрегіңізбен таңдаңыз</h3><p>Каталогты қараңыз, ұнаған гүлдерді таңдаулыларға сақтаңыз немесе бірден себетке қосыңыз.</p></article><article><span class="feature-icon"><svg><use href="#i-gift"/></svg></span><h3>Жылы тілек қосыңыз</h3><p>Алушының деректерін көрсетіп, ашықхатқа өз тілегіңізді жазыңыз. Ашықхат тегін.</p></article><article><span class="feature-icon"><svg><use href="#i-truck"/></svg></span><h3>Қуаныш сыйлаңыз</h3><p>Курьермен жеткізуді немесе алып кетуді таңдаңыз. Тапсырысты жеке кабинеттен бақылаңыз.</p></article></div>
+    <div class="faq"><h3>Жиі қойылатын сұрақтар</h3><details><summary>Жеткізу қанша тұрады?<svg><use href="#i-plus"/></svg></summary><p>Курьермен жеткізу — 1 500 ₸. Жеңілдіктен кейінгі сома 25 000 ₸ немесе одан жоғары болса, жеткізу тегін. Өзіңіз алып кету әрқашан тегін. Қала мен мекенжайды тапсырыс кезінде жазыңыз; жеткізу мүмкіндігін әкімші растайды.</p></details><details><summary>Тапсырысты қалай төлеймін?<svg><use href="#i-plus"/></svg></summary><p>Бұл оқу жобасында төлем картасының деректері сұралмайды және онлайн ақша алынбайды. Тапсырыс «Жаңа» күйінде тіркеледі. Төлем мен жеткізуді әкімшімен келісу қарастырылған.</p></details><details><summary>Тапсырысымның күйін қайдан көремін?<svg><use href="#i-plus"/></svg></summary><p>Жеке кабинетке кіріп, «Менің тапсырыстарым» бөлімін ашыңыз. Онда тапсырыс нөмірі, құрамы, сомасы және ағымдағы күйі көрсетіледі.</p></details><details><summary>Гүлді қалай ұзақ сақтауға болады?<svg><use href="#i-plus"/></svg></summary><p>Сабақты қиғаштап кесіп, таза салқын суға қойыңыз. Суды күн сайын ауыстырып, гүлді тікелей күн сәулесі мен жылу көздерінен алысырақ ұстаңыз.</p></details></div>
+  </section>
+  <section class="closing-banner"><div class="container"><svg><use href="#i-flower"/></svg><h2>Бүгін біреудің күнін <em>ерекше етіңіз.</em></h2><a href="#catalog" class="button button-light">Гүлдерді қарау</a></div></section>
+</main>
+<footer class="site-footer container"><div><a class="brand" href="#"><svg class="brand-flower"><use href="#i-flower"/></svg><span>Flower<span class="brand-italic">Shop</span></span></a><p>Сезіміңізді жеткізетін гүлдер.</p></div><nav aria-label="Қосымша мәзір"><a href="#catalog">Каталог</a><a href="#about">Біз туралы</a><a href="#delivery">Жеткізу және төлем</a><button class="text-button" id="footer-account">Жеке кабинет</button></nav><div class="footer-bottom"><span>© <span id="year"></span> FlowerShop</span><span>Қазақстанда сүйіспеншілікпен жасалған · Оқу жобасы</span></div></footer>
+
+<dialog id="product-dialog" class="modal product-modal" aria-label="Гүл туралы толық ақпарат"><button class="icon-button modal-close" data-close aria-label="Жабу"><svg><use href="#i-close"/></svg></button><div id="product-detail"></div></dialog>
+<dialog id="cart-dialog" class="drawer" aria-labelledby="cart-title"><div class="drawer-header"><div><span class="eyebrow">СІЗДІҢ ТАҢДАУЫҢЫЗ</span><h2 id="cart-title">Себетім <span id="drawer-count"></span></h2></div><button class="icon-button" data-close aria-label="Себетті жабу"><svg><use href="#i-close"/></svg></button></div><div id="cart-items" class="cart-items"></div><div id="cart-footer" class="cart-footer"></div></dialog>
+<dialog id="auth-dialog" class="modal auth-modal" aria-labelledby="auth-title"><button class="icon-button modal-close" data-close aria-label="Жабу"><svg><use href="#i-close"/></svg></button><svg class="auth-flower"><use href="#i-flower"/></svg><span class="eyebrow">FLOWERSHOP-ҚА ҚОШ КЕЛДІҢІЗ</span><h2 id="auth-title">Қайта көргенімізге <em>қуаныштымыз</em></h2><div class="auth-tabs"><button class="active" data-auth-tab="login">Кіру</button><button data-auth-tab="register">Тіркелу</button></div><form id="auth-form"><label id="name-field" hidden>Есіміңіз<input name="name" autocomplete="name" placeholder="Есіміңіз" minlength="2" maxlength="80"></label><label>Электрондық пошта<input name="email" type="email" required autocomplete="email" placeholder="siz@example.com" maxlength="254"></label><label>Құпиясөз<input name="password" type="password" required autocomplete="current-password" placeholder="Құпиясөз" maxlength="128"></label><p class="field-help" id="password-help" hidden>Кемінде 8 таңба: әріп пен сан болуы керек.</p><p id="auth-error" class="form-error" role="alert"></p><button class="button button-primary full-width" type="submit" id="auth-submit">Кіру</button></form><p class="auth-footnote">Тапсырыстарыңызды бір жерден бақылаңыз.</p></dialog>
+<dialog id="checkout-dialog" class="modal checkout-modal" aria-labelledby="checkout-title"><button class="icon-button modal-close" data-close aria-label="Жабу"><svg><use href="#i-close"/></svg></button><span class="eyebrow">ҚУАНЫШҚА БІР ҚАДАМ</span><h2 id="checkout-title">Тапсырысты <em>рәсімдеу</em></h2><form id="checkout-form"><div class="checkout-columns"><div class="checkout-fields"><h3>Алушының деректері</h3><div class="form-row"><label>Алушының аты<input name="recipient_name" required minlength="2" maxlength="100" autocomplete="name" placeholder="Аты-жөні"></label><label>Телефон нөмірі<input name="phone" type="tel" required minlength="10" autocomplete="tel" placeholder="+7 700 123 45 67" maxlength="25" inputmode="tel"></label></div><h3>Жеткізу тәсілі</h3><div class="delivery-options"><label class="radio-card"><input type="radio" name="delivery_method" value="courier" checked><svg><use href="#i-truck"/></svg><span>Курьермен<small>1 500 ₸ / 25 000 ₸ бастап тегін</small></span></label><label class="radio-card"><input type="radio" name="delivery_method" value="pickup"><svg><use href="#i-pin"/></svg><span>Өзім аламын<small>Тегін</small></span></label></div><label id="address-field">Қала және жеткізу мекенжайы<input name="address" required minlength="5" maxlength="300" autocomplete="street-address" placeholder="Қала, көше, үй, пәтер"></label><div class="form-row"><label>Жеткізу күні<input name="delivery_date" type="date" required></label><label>Ыңғайлы уақыт<select name="time_slot"><option>Кез келген уақытта</option>09:00–12:00</option>12:00–15:00</option>15:00–18:00</option>18:00–21:00</option></select></label></div><label>Ашықхаттағы тілек <span class="optional">(міндетті емес)</span><textarea name="card_message" maxlength="500" rows="3" placeholder="Жүректен шыққан жылы сөзіңіз…"></textarea></label></div><aside class="checkout-summary"><h3>Сіздің тапсырысыңыз</h3><div id="checkout-items"></div><label>Промокод<input name="promo_code" placeholder="Мысалы: GUL10" maxlength="30" autocomplete="off"></label><p class="field-help" id="promo-feedback">Гүл шоқтарына GUL10 — 10% жеңілдік.</p><div id="checkout-totals"></div><p class="checkout-note">Тапсырысты әкімші растайды. Бұл жерде онлайн ақша алынбайды.</p><p id="checkout-error" class="form-error" role="alert"></p><button class="button button-primary full-width" type="submit" id="checkout-submit">Тапсырыс беру</button></aside></div></form></dialog>
+<dialog id="account-dialog" class="modal account-modal" aria-labelledby="account-title"><button class="icon-button modal-close" data-close aria-label="Жабу"><svg><use href="#i-close"/></svg></button><span class="eyebrow">ЖЕКЕ КАБИНЕТ</span><h2 id="account-title">Сәлем, <em id="account-name"></em></h2><div class="account-toolbar"><span id="account-email"></span><button class="text-button" id="logout-button">Аккаунттан шығу</button></div><h3>Менің тапсырыстарым</h3><div id="orders-list" aria-live="polite"></div></dialog>
+<dialog id="success-dialog" class="modal success-modal" aria-labelledby="success-title"><button class="icon-button modal-close" data-close aria-label="Жабу"><svg><use href="#i-close"/></svg></button><span class="success-icon"><svg><use href="#i-check"/></svg></span><span class="eyebrow">РАҚМЕТ!</span><h2 id="success-title">Қуанышқа толы<br><em>тапсырыс қабылданды.</em></h2><p id="success-description"></p><p>Әкімші тапсырысыңызды тексеріп, күйін жаңартады.</p><button class="button button-primary" id="view-orders">Тапсырысымды көру</button></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+
+
+
+
