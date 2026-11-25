@@ -10,7 +10,8 @@ jobs:
         run: |
           python - <<'PY'
           def calculate_total(price, quantity):
-              return price + quantity
+              return price * quantity
           assert calculate_total(100, 2) == 200, 'Баға санға көбейтілуі керек'
           print('Тест сәтті өтті: 100 × 2 = 200')
           PY
+
