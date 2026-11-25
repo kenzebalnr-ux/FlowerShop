@@ -1,0 +1,50 @@
+[
+  {
+    "users": 5,
+    "duration_seconds": 60,
+    "exit_code": 0,
+    "requests": 372,
+    "failures": 0,
+    "average_ms": 4.911708871057721,
+    "p95_ms": 8.0,
+    "rps": 6.264050677253938,
+    "peak_cpu_percent": 7.8,
+    "peak_rss_mb": 80.45
+  },
+  {
+    "users": 20,
+    "duration_seconds": 120,
+    "exit_code": 0,
+    "requests": 2909,
+    "failures": 0,
+    "average_ms": 5.177586455886969,
+    "p95_ms": 9.0,
+    "rps": 24.666056058698874,
+    "peak_cpu_percent": 33.2,
+    "peak_rss_mb": 83.59
+  },
+  {
+    "users": 50,
+    "duration_seconds": 180,
+    "exit_code": 0,
+    "requests": 11129,
+    "failures": 0,
+    "average_ms": 6.1761791175692435,
+    "p95_ms": 11.0,
+    "rps": 62.099467769335725,
+    "peak_cpu_percent": 56.2,
+    "peak_rss_mb": 87.92
+  },
+  {
+    "users": 100,
+    "duration_seconds": 180,
+    "exit_code": 0,
+    "requests": 22093,
+    "failures": 0,
+    "average_ms": 8.341223238109933,
+    "p95_ms": 17.0,
+    "rps": 123.33859986513365,
+    "peak_cpu_percent": 104.2,
+    "peak_rss_mb": 94.02
+  }
+]
