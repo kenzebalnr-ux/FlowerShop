@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="2040" viewBox="0 0 2600 2040">
+<rect width="100%" height="100%" fill="white"/>
+<text x="577.5" y="107.0" font-family="Times New Roman" font-size="80" font-weight="700" fill="#111111">FlowerShop дерекқорының ER сызбасы</text>
+<text x="686.53125" y="176.5" font-family="Arial" font-size="35" font-weight="400" fill="#111111">PK — бастапқы кілт     FK — сыртқы кілт     1:0..N — бірден көпке байланыс</text>
+<rect x="70" y="275" width="650" height="366" rx="18" fill="#f1f3f4" stroke="#949a9f" stroke-width="2"/>
+<text x="100" y="327.2" font-family="Arial" font-size="38" font-weight="700" fill="#111111">Пайдаланушылар</text>
+<text x="102" y="367.0" font-family="Arial" font-size="30" font-weight="700" fill="#647079">user</text>
+<polyline points="92,385 698,385" fill="none" stroke="#aab1b7" stroke-width="2"/>
+<text x="104" y="428.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">PK id</text>
+<text x="104" y="467.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">name</text>
+<text x="104" y="506.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">email UNIQUE</text>
+<text x="104" y="545.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">password_hash</text>
+<text x="104" y="584.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">role</text>
+<text x="104" y="623.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">created_at</text>
+<rect x="70" y="900" width="650" height="288" rx="18" fill="#f1f3f4" stroke="#949a9f" stroke-width="2"/>
+<text x="100" y="952.2" font-family="Arial" font-size="38" font-weight="700" fill="#111111">Кіру сессиялары</text>
+<text x="102" y="992.0" font-family="Arial" font-size="30" font-weight="700" fill="#647079">authsession</text>
+<polyline points="92,1010 698,1010" fill="none" stroke="#aab1b7" stroke-width="2"/>
+<text x="104" y="1053.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">PK id</text>
+<text x="104" y="1092.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">token_hash UNIQUE</text>
+<text x="104" y="1131.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">FK user_id</text>
+<text x="104" y="1170.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">expires_at</text>
+<rect x="930" y="275" width="700" height="834" rx="18" fill="#f1f3f4" stroke="#949a9f" stroke-width="2"/>
+<text x="960" y="327.2" font-family="Arial" font-size="38" font-weight="700" fill="#111111">Тапсырыстар</text>
+<text x="962" y="367.0" font-family="Arial" font-size="30" font-weight="700" fill="#647079">order</text>
+<polyline points="952,385 1608,385" fill="none" stroke="#aab1b7" stroke-width="2"/>
+<text x="964" y="428.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">PK id</text>
+<text x="964" y="467.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">number UNIQUE</text>
+<text x="964" y="506.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">FK user_id</text>
+<text x="964" y="545.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">recipient_name</text>
+<text x="964" y="584.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">phone</text>
+<text x="964" y="623.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">address</text>
+<text x="964" y="662.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">delivery_method</text>
+<text x="964" y="701.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">delivery_date</text>
+<text x="964" y="740.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">time_slot</text>
+<text x="964" y="779.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">card_message</text>
+<text x="964" y="818.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">promo_code</text>
+<text x="964" y="857.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">subtotal</text>
+<text x="964" y="896.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">discount</text>
+<text x="964" y="935.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">delivery_fee</text>
+<text x="964" y="974.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">total</text>
+<text x="964" y="1013.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">status</text>
+<text x="964" y="1052.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">payment_method</text>
+<text x="964" y="1091.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">created_at</text>
+<rect x="1840" y="275" width="690" height="249" rx="18" fill="#f1f3f4" stroke="#949a9f" stroke-width="2"/>
+<text x="1870" y="327.2" font-family="Arial" font-size="38" font-weight="700" fill="#111111">Гүл санаттары</text>
+<text x="1872" y="367.0" font-family="Arial" font-size="30" font-weight="700" fill="#647079">category</text>
+<polyline points="1862,385 2508,385" fill="none" stroke="#aab1b7" stroke-width="2"/>
+<text x="1874" y="428.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">PK id</text>
+<text x="1874" y="467.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">name UNIQUE</text>
+<text x="1874" y="506.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">slug UNIQUE</text>
+<rect x="1840" y="720" width="690" height="561" rx="18" fill="#f1f3f4" stroke="#949a9f" stroke-width="2"/>
+<text x="1870" y="772.2" font-family="Arial" font-size="38" font-weight="700" fill="#111111">Гүл шоқтары</text>
+<text x="1872" y="812.0" font-family="Arial" font-size="30" font-weight="700" fill="#647079">product</text>
+<polyline points="1862,830 2508,830" fill="none" stroke="#aab1b7" stroke-width="2"/>
+<text x="1874" y="873.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">PK id</text>
+<text x="1874" y="912.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">name</text>
+<text x="1874" y="951.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">description</text>
+<text x="1874" y="990.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">price</text>
+<text x="1874" y="1029.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">old_price</text>
+<text x="1874" y="1068.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">FK category_id</text>
+<text x="1874" y="1107.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">image_url</text>
+<text x="1874" y="1146.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">stock</text>
+<text x="1874" y="1185.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">occasion</text>
+<text x="1874" y="1224.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">badge</text>
+<text x="1874" y="1263.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">rating</text>
+<rect x="930" y="1440" width="700" height="405" rx="18" fill="#f1f3f4" stroke="#949a9f" stroke-width="2"/>
+<text x="960" y="1492.2" font-family="Arial" font-size="38" font-weight="700" fill="#111111">Тапсырыс құрамы</text>
+<text x="962" y="1532.0" font-family="Arial" font-size="30" font-weight="700" fill="#647079">orderitem</text>
+<polyline points="952,1550 1608,1550" fill="none" stroke="#aab1b7" stroke-width="2"/>
+<text x="964" y="1593.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">PK id</text>
+<text x="964" y="1632.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">FK order_id</text>
+<text x="964" y="1671.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">FK product_id NULL</text>
+<text x="964" y="1710.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">product_name</text>
+<text x="964" y="1749.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">image_url</text>
+<text x="964" y="1788.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">quantity</text>
+<text x="964" y="1827.0" font-family="Arial" font-size="30" font-weight="400" fill="#111111">unit_price</text>
+<polyline points="720,470 930,470" fill="none" stroke="#3b4247" stroke-width="4"/>
+<text x="742" y="448.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">1</text>
+<text x="828" y="448.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">0..N</text>
+<polyline points="395,641 395,900" fill="none" stroke="#3b4247" stroke-width="4"/>
+<text x="413" y="684.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">1</text>
+<text x="413" y="878.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">0..N</text>
+<polyline points="2185,524 2185,720" fill="none" stroke="#3b4247" stroke-width="4"/>
+<text x="2205" y="568.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">1</text>
+<text x="2205" y="696.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">0..N</text>
+<polyline points="1280,1109 1280,1440" fill="none" stroke="#3b4247" stroke-width="4"/>
+<text x="1300" y="1152.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">1</text>
+<text x="1300" y="1416.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">0..N</text>
+<polyline points="1840,1160 1740,1160 1740,1640 1630,1640" fill="none" stroke="#3b4247" stroke-width="4"/>
+<text x="1747" y="1140.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">0..1</text>
+<text x="1640" y="1616.8" font-family="Arial" font-size="32" font-weight="700" fill="#111111">0..N</text>
+<text x="620.53125" y="1927.0" font-family="Arial" font-size="30" font-weight="400" fill="#596168">Тауар жойылғанда orderitem.product_id = NULL; тапсырыс жолындағы атау мен баға сақталады.</text>
+<text x="855.015625" y="1975.2" font-family="Arial" font-size="28" font-weight="400" fill="#596168">Нақты SQLModel кестелері мен сыртқы кілттері бойынша жасалған.</text>
+</svg>
