@@ -1,0 +1,16 @@
+name: Lab8 — ақауды анықтау және түзету
+on: [push, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Тапсырыс сомасын тексеру
+        run: |
+          python - <<'PY'
+          def calculate_total(price, quantity):
+              return price + quantity
+          assert calculate_total(100, 2) == 200, 'Баға санға көбейтілуі керек'
+          print('Тест сәтті өтті: 100 × 2 = 200')
+          PY
