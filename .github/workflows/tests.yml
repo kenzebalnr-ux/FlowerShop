@@ -1,0 +1,37 @@
+name: FlowerShop сапасын тексеру
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Тәуелділіктер
+        run: pip install -r requirements-dev.txt
+      - name: Автоматты және интеграциялық тесттер
+        run: python -m pytest -v --junitxml=artifacts/tests.xml --cov=backend --cov-report=term-missing --cov-report=xml:artifacts/coverage.xml
+      - name: Қауіпсіздікті статикалық тексеру
+        run: python -m bandit -r backend -x backend/__pycache__ -f json -o artifacts/bandit.json
+      - name: Тест нәтижелерін сақтау
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flowershop-test-results
+          path: artifacts/
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Docker Compose тексеру
+        run: docker compose config -q
+      - name: Контейнерлерді құрастыру
+        run: docker compose build
+
