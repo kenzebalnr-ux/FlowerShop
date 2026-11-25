@@ -96,7 +96,7 @@ if not st.session_state.user or st.session_state.user.get("role") != "admin":
     st.info("Каталогты қарауға болады. Тауарлар мен тапсырыстарды өзгерту үшін әкімші ретінде кіріңіз.")
     st.stop()
 
-add_tab, edit_tab, orders_tab = st.tabs(["Гүл шоғын қосу", "Өзгерту және жою", "Тапсырыстар"])
+add_tab, edit_tab, orders_tab = st.tabs(["Гүл шоғын қосу", "Өзгерту және жою", "Тапсырыстар"], key="admin_tabs", on_change="rerun")
 with add_tab:
     with st.form("add_product", clear_on_submit=True):
         name = st.text_input("Гүл шоғының атауы")
@@ -154,4 +154,5 @@ with orders_tab:
                 st.rerun()
     elif orders is not None:
         st.info("Әзірше тапсырыс жоқ.")
+
 
